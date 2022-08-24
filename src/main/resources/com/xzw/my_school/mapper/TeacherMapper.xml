@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xzw.my_school.mapper.TeacherMapper">
+    <!--添加课程信息-->
+    <insert id="addUserByClass">
+        insert  into  class values(null,#{tid},#{sid})
+    </insert>
+
+    <!--删除老师-->
+    <delete id="delUserByTeacher">
+        delete from teacher where teacher.t_id=#{tid}
+    </delete>
+
+    <!-- 查询老师id-->
+    <select id="selUserByTeacherName" resultType="java.lang.Integer">
+        select t_id from teacher where t_name=#{name}
+    </select>
+
+
+</mapper>
